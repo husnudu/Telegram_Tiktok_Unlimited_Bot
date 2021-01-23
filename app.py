@@ -8,8 +8,8 @@ from moviepy.editor import *
 import json
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 import telegram
-from telegram.ext import Updater, MessageHandler, CommandHandler, Filters, CallbackContext, CallbackQueryHandler, messagequeue
-from telegram.error import BadRequest, TimedOut
+from telegram.ext import Updater, MessageHandler, CommandHandler, Filters, CallbackContext, CallbackQueryHandler
+from telegram.error import BadRequest
 import os
 from time import sleep as s
 import zipfile
@@ -120,6 +120,7 @@ def main():
         data = json.load(jsonF)
         global updater
         global dp
+    # updater = Updater("{}".format(data['botApiKey']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
     updater = Updater("{}".format(data['botApiKey']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
