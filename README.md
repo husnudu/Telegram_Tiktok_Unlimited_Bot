@@ -4,5 +4,5 @@ This telegram bot helps you get unlimited Tiktok video length
 #### To Run the bot just do the following: 
 #### 1) add your API token in the json file
 #### 2) rename the json file from (_api.json) to (api.josn)
-#### 3) put (#) on line (124) and remove (#) from line (125) 
+#### 3) put (#) on line (123) and remove (#) from lines (124,125,126) 
 ---------------------------------------------------------------
