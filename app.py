@@ -120,10 +120,10 @@ def main():
     
     global updater
     global dp
-    updater = Updater("{}".format(environ['API_VALUE']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
-    # with open('api.json') as jsonF:
-        # data = json.load(jsonF)
-    #updater = Updater("{}".format(data['botApiKey']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
+    #updater = Updater("{}".format(environ['API_VALUE']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
+     with open('api.json') as jsonF:
+         data = json.load(jsonF)
+    updater = Updater("{}".format(data['botApiKey']), use_context=True, request_kwargs={'read_timeout': 1000, 'connect_timeout': 1000})
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
 
